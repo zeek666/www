@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+</head>
+<body>
+	<h2>ajax接受服务器返回的信息</h2>
+	<input type="button" name="" value="触发" onclick="fl()">
+	<div id="result"></div>
+</body>
+<script type="text/javascript">
+function fl(){
+	var xhr = new XMLHttpRequest();
+	if(xhr.readyState==4){
+		console.log(xhr.responseText);
+		document.getElementById('result').inneerHTML = xhr.responseText;
+	}
+	xhr.open('post',"{:url('ajax')}");
+	xhr.send(null);
+	//console.log(xhr.responseText);
+}
+</script>
+</html>

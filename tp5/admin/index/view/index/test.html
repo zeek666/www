@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	form input{
+		margin: 5px,0px;
+		display: block;
+	}
+</style>
+</head>
+<body>
+<form action = "" method="get" id="ff" class="dd">
+	<div>
+		<label>名字</label>
+		<input name="name" type="text"/>
+	</div>
+	<div>
+		<label>密码</label>	
+		<input name="pwd" type="password"/>
+	</div>
+	<div>
+		<label>邮箱</label>	
+		<input name="email" type="text"/>
+	</div>
+	<input type="submit" value="提交">
+</form>
+<script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript"> 
+var xhr = new XMLHttpRequest();
+//console.log(xhr);
+xhr.open('post',"{:url('testajax')}");
+var aa = "2";
+//console.log(aa);
+xhr.send(aa);
+/*$(function(){
+  $("#ff").validate({
+      debug:false,
+      errorElement:'span',
+      errorPlacement:function(span,element){
+      	$(element).parent().append(span);
+      },
+      rules:{
+        name:{
+        	required:true,
+        },
+        pwd:{
+        	required:true
+        },
+        email:{
+        	email:true,
+        	remote:"{:url('testajax')}",
+        }
+      }
+  });
+});*/
+</script>
+	
+</body>
+</html>
